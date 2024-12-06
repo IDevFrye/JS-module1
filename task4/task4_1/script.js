@@ -31,7 +31,7 @@
   const itemCategory = prompt("Введите категорию товара: ");
   const itemPrice = Number(prompt("Введите цену товара: "));
 
-  if (Number.isInteger(itemCount) && Number.isInteger(itemPrice)) {
+  if (Number.isInteger(itemCount) && Number.isInteger(itemPrice) && itemCount > 0 && itemPrice > 0) {
     const totalAmount = itemPrice * itemCount;
     console.log(`На складе ${itemCount} единиц(ы) товара "${itemName}" на сумму ${totalAmount} рублей.`);
   } else {
@@ -45,7 +45,7 @@
   console.log(`Тип наименования: ${typeof itemName}`);
 
   const itemCount = Number(prompt("Введите количество товара: "));
-  if (Number.isInteger(itemCount)) {
+  if (Number.isInteger(itemCount) && itemCount > 0) {
     console.log(`Тип количества: ${typeof itemCount}`);
   } else {
     throw new Error(`Вы ввели некорректные данные`);
@@ -55,7 +55,7 @@
   console.log(`Тип категории: ${typeof itemCategory}`);
 
   const itemPrice = Number(prompt("Введите цену товара: "));
-  if (Number.isInteger(itemCount)) {
+  if (Number.isInteger(itemPrice) && itemPrice > 0) {
     console.log(`Тип цены: ${typeof itemPrice}`);
   } else {
     throw new Error(`Вы ввели некорректные данные`);
