@@ -1,3 +1,5 @@
+'use strict';
+
 const listIPv4 = require('./ipv4');
 
 function uniqueIPs(arr) {
