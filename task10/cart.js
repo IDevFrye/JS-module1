@@ -1,6 +1,6 @@
 'use strict';
 
-let cart = {
+const cart = {
   items: [],
   count: 0,
 
@@ -9,18 +9,22 @@ let cart = {
   },
 
   add(name, price, quantity = 1) {
-    if (typeof name !== "string" || name.trim() === "") {
-      console.error("Ошибка: название товара должно быть непустой строкой.");
+    if (typeof name !== 'string' || name.trim() === '') {
+      console.error('Ошибка: название товара должно быть непустой строкой.');
       return;
     }
 
-    if (typeof price !== "number" || price <= 0) {
-      console.error("Ошибка: цена товара должна быть положительным целым числом.");
+    if (typeof price !== 'number' || price <= 0) {
+      console.error(
+        'Ошибка: цена товара должна быть положительным целым числом.',
+      );
       return;
     }
 
     if (!Number.isInteger(quantity) || quantity <= 0) {
-      console.error("Ошибка: количество товара должно быть положительным целым числом.");
+      console.error(
+        'Ошибка: количество товара должно быть положительным целым числом.',
+      );
       return;
     }
 
@@ -37,9 +41,9 @@ let cart = {
   },
 
   calculateItemPrice() {
-    return this.items.reduce((acc, item) => {
-      return acc + item.price * item.quantity;
-    }, 0).toFixed(2);
+    return this.items.reduce(
+      (acc, item) => acc + item.price * item.quantity, 0)
+      .toFixed(2);
   },
 
   clear() {
@@ -66,15 +70,15 @@ console.log('\n', 'Добавление 3-го товара: ', '\n', cart, '\n'
 
 // Тест ошибочных входных данных
 cart.add(12345, 75.9, 50);
-cart.add("TEST", "TEST");
-cart.add("TEST", 750.78, "TEST");
+cart.add('TEST', 'TEST');
+cart.add('TEST', 750.78, 'TEST');
 
 // Тест print()
 cart.print();
 
 // Тест clear()
 cart.clear();
-console.log("После очистки: ");
+console.log('После очистки: ');
 console.log(cart);
 
 // Попытка изменить totalPrice напрямую
