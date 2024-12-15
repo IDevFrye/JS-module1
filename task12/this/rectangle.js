@@ -10,14 +10,14 @@ const rectangle = {
     if (typeof value === 'number' && value > 0) {
       this._width = value;
     } else {
-      console.error('Ширина должна быть числом больше 0');
+      console.error('Ширина должна быть числом больше 0!');
     }
   },
   set height(value) {
     if (typeof value === 'number' && value > 0) {
       this._height = value;
     } else {
-      console.error('Высота должна быть числом больше 0');
+      console.error('Высота должна быть числом больше 0!');
     }
   },
   get perimeter() {
@@ -37,3 +37,6 @@ rectangle.height = 6;
 console.log(rectangle);
 console.log(`Периметр прямоугольника = ${rectangle.perimeter}`);
 console.log(`Площадь прямоугольника = ${rectangle.area}`);
+
+rectangle.width = 'sd';
+rectangle.height = -1;
